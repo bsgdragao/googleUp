@@ -3,20 +3,23 @@ package pagesObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SecondPageObjects {
+import utils.TestBase;
+
+public class SecondPageObjects extends TestBase{
+	
+	WebDriverWait wait = new WebDriverWait(driver, 15);
 	
 	public WebElement firstName(WebDriver driver) {
-		String ngModel = "[ng-model*='FirstName']";
-		return driver.findElement(By.cssSelector(ngModel));
-		//return driver.findElement(By.xpath(placeHolder));
+		String xPath = "//*[@id=\"basicBootstrapForm\"]/div[1]/div[1]/input";
+		return driver.findElement(By.xpath(xPath));
 	}	
 	
 	public WebElement lastName(WebDriver driver) {
-		String ngModel = "[ng-model*='LastName']";
-		return driver.findElement(By.cssSelector(ngModel));
-//		String placeHolder = "//input[@placeholder='Last Name']";
-//		return driver.findElement(By.xpath(placeHolder));
+		String xPath = "//*[@id=\"basicBootstrapForm\"]/div[1]/div[2]/input";
+		return driver.findElement(By.xpath(xPath));
 	}	
 	
 	public WebElement adressForm(WebDriver driver) {
@@ -45,53 +48,56 @@ public class SecondPageObjects {
 		return driver.findElement(By.xpath(xPath));
 	}
 	
+//	public WebElement languageForm(WebDriver driver) {
+//		String id = "msdd";
+//		return driver.findElement(By.id(id));
+//	}	
+	
 	public WebElement languageForm(WebDriver driver) {
-		String id = "msdd";
-		return driver.findElement(By.id(id));
+		String xPath = "//*[@id=\"msdd\"]";
+		return driver.findElement(By.xpath(xPath));
+	}	
+	
+	public WebElement languageFormOpt(WebDriver driver) {
+		String xPath = "//*[@id=\"basicBootstrapForm\"]/div[7]/div/multi-select/div[2]/ul/li[29]/a";
+		return driver.findElement(By.xpath(xPath));
 	}	
 	
 	public WebElement dropDownSkills(WebDriver driver) {
 		String id = "Skills";
 		return driver.findElement(By.id(id));
-		//Para o teste...
-		//	Select sel = new Select(dropDownSkills);
-		//sel.selectByVisibleText("Java");
 	}	
 	
 	public WebElement dropDownCountry(WebDriver driver) {
 		String id = "countries";
 		return driver.findElement(By.id(id));
-		//Para o teste...
-		//	Select sel = new Select(dropDownCountries);
-		//sel.selectByVisibleText("Brazil");
-	}	
+	}
 	
 	public WebElement dropDownSelectCountry(WebDriver driver) {
 		String xPath = "//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span";
 		return driver.findElement(By.xpath(xPath));
-		//Select sel = new Select(dropDownCountries);
-		//sel.selectByVisibleText("Japan");
+	}
+	
+	public WebElement dropDownSelectCountryForm(WebDriver driver) {
+		String xPath = "/html/body/span/span/span[1]/input";
+		return driver.findElement(By.xpath(xPath));
 	}
 	
 	public WebElement dropDownYearBox(WebDriver driver) {
 		String id = "yearbox";
 		return driver.findElement(By.id(id));
-		//Para o teste...
-		//	Select sel = new Select(dropDownYearBox);
 		//sel.selectByVisibleText("1986");
 	}	
 	
 	public WebElement dropDownMonthBox(WebDriver driver) {
 		String xPath = "//*[@id=\"basicBootstrapForm\"]/div[11]/div[2]/select";
 		return driver.findElement(By.xpath(xPath));
-		//Select sel = new Select(dropDownMonthBox);
 		//sel.selectByVisibleText("June");
 	}
 	
 	public WebElement dropDownDayBox(WebDriver driver) {
 		String xPath = "//*[@id=\"daybox\"]";
 		return driver.findElement(By.xpath(xPath));
-		//Select sel = new Select(dropDownMonthBox);
 		//sel.selectByVisibleText("4");
 	}
 	
