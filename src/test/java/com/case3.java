@@ -1,6 +1,8 @@
 package com;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.DynamicTest.stream;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -84,6 +86,7 @@ public class case3 extends TestBase	 {
 	
 	@Test
 	public void testeD() {
+		sleep();
 		secondPageObjects.languageForm(driver).click();
 		secondPageObjects.languageForm(driver).click();
 		
