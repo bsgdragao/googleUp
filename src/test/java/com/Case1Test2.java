@@ -50,6 +50,7 @@ public class Case1Test2 {
 			System.out.println("Spell link exist");
 		} catch (Exception e) {
 			// TODO: handle exception
+			TestSequenceExecution.ERROR_COUNT++;
 		}
 		sleep(4000);
 		
@@ -58,6 +59,7 @@ public class Case1Test2 {
 			System.out.println("Bitfrost Google Page link exist");
 		} catch (Exception e) {
 			// TODO: handle exception
+			TestSequenceExecution.ERROR_COUNT++;
 		}		
 		sleep(2000);
 		
@@ -66,7 +68,9 @@ public class Case1Test2 {
 			System.out.println("Bitfrost Page link exist");
 		} catch (Exception e) {
 			// TODO: handle exception
-		}				
+			TestSequenceExecution.ERROR_COUNT++;
+		}	
+		System.out.println("The total of errors is: " + TestSequenceExecution.ERROR_COUNT + "\n");
 		sleep(2000);
 		
 		driver.manage().deleteAllCookies();
